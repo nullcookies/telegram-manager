@@ -112,10 +112,8 @@
         $(document).ready(function () {
             $("#newBotForm").submit(function (e) {
                 e.preventDefault();
-                console.log('Form submit');
 
                 var data = new FormData(this);
-
                 $.ajax({
                     url: '{{route("telegram.post.bot")}}',
                     method: 'POST',
@@ -124,10 +122,12 @@
                     contentType: false,
                     success: function (response) {
                         if (response.success == true) {
+                            $.notify("Бот добавлен, страница будет перезагружена.", "success");
+
                             setTimeout(function () {
-                                $.notify("Бот добавлен, страница будет перезагружена.", "success");
+                                window.location.reload();
                             }, 2000);
-                            window.location.reload();
+
                         }
                     }
                 });

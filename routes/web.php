@@ -20,5 +20,8 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/', 'DashboardController@index');
 
     Route::get('/telegram-bots', 'TelegramBotController@index')->name('telegram.bots.index');
-    Route::post('/telegram/bot', 'TelegramBotController@store')->name('telegram.post.bot');
+    Route::post('/telegram/bot/new', 'TelegramBotController@store')->name('telegram.post.bot');
+
+    Route::get('/telegram-channels', 'TelegramChannelController@index')->name('telegram.channel.index');
+    Route::post('/telegram-channels/new', 'TelegramChannelController@store')->name('telegram.channel.new');
 });

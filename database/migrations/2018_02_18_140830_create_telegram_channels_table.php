@@ -15,6 +15,11 @@ class CreateTelegramChannelsTable extends Migration
     {
         Schema::create('telegram_channels', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('user_id')->unsigned();
+            $table->integer('bot_id')->unsigned()->nullable();
+            $table->string('channel_id');
+            $table->text('description')->nullable();
+            $table->integer('status')->unsigned()->nullable()->default(1);
             $table->timestamps();
         });
     }

@@ -19,7 +19,7 @@
                     <a href="{{route('telegram.bots.index')}}"> <i class="menu-icon fa fa-bug"></i>Боты Telegram </a>
                 </li>
                 <li>
-                    <a href="widgets.html"> <i class="menu-icon fa fa-book"></i>Группы Telegram </a>
+                    <a href="{{route('telegram.channel.index')}}"> <i class="menu-icon fa fa-book"></i>Группы Telegram </a>
                 </li>
                 <li>
                     <a href="widgets.html"> <i class="menu-icon fa fa-bold"></i>Группы Vkontakte </a>
